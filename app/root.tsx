@@ -18,6 +18,8 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  let tamaguiStyles = tamaguiConfig.getCSS();
+
   return (
     <html lang="en">
       <head>
@@ -25,6 +27,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        <style type="text/css">{tamaguiStyles}</style>
       </head>
       <body>
         <TamaguiProvider config={tamaguiConfig}>
