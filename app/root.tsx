@@ -30,7 +30,7 @@ export default function App() {
         <style>{tamaguiStyles}</style>
       </head>
       <body>
-        <TamaguiProvider config={tamaguiConfig} disableRootThemeClass={true}>
+        <TamaguiProvider config={tamaguiConfig} disableInjectCSS={true} disableRootThemeClass={true}>
           <Outlet />
           <script
             dangerouslySetInnerHTML={{
