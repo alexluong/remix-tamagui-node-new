@@ -2,9 +2,9 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
-    "start": "remix-serve build",
+    "build": "TAMAGUI_TARGET=web remix build",
+    "dev": "TAMAGUI_TARGET=web remix dev",
+    "start": "TAMAGUI_TARGET=web remix-serve build",
     "typecheck": "tsc"
   },
   "dependencies": {
