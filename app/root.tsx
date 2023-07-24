@@ -10,16 +10,14 @@ import {
 } from "@remix-run/react";
 import { TamaguiProvider } from "@tamagui/web";
 import tamaguiConfig from "../tamagui.config";
-import tamaguiResetStyles from '@tamagui/core/reset.css';
+import tamaguiResetStyles from "@tamagui/core/reset.css";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-  { rel: "stylesheet", href: tamaguiResetStyles }
+  { rel: "stylesheet", href: tamaguiResetStyles },
 ];
 
 export default function App() {
-  let tamaguiStyles = tamaguiConfig.getCSS();
-
   return (
     <html lang="en">
       <head>
@@ -27,10 +25,10 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <style>{tamaguiStyles}</style>
+        {typeof document === "undefined" ? "__STYLES__" : undefined}
       </head>
       <body>
-        <TamaguiProvider config={tamaguiConfig} disableInjectCSS={true} disableRootThemeClass={true}>
+        <TamaguiProvider config={tamaguiConfig} disableRootThemeClass={true}>
           <Outlet />
           <script
             dangerouslySetInnerHTML={{
